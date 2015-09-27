@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+get('/', function () {
+    return redirect('/poster');
 });
+
+get('poster', 'PosterController@index');
+get('poster/{slug}', 'PosterController@showPoster');

@@ -7,15 +7,22 @@ class DatabaseSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run()
     {
         Model::unguard();
 
-        // $this->call(UserTableSeeder::class);
+        $this->call('PosterTableSeeder');
+    }
 
-        Model::reguard();
+}
+
+class PosterTableSeeder extends Seeder
+{
+    public function run()
+    {
+        App\Poster::truncate();
+
+        factory(App\Poster::class, 20)->create();
     }
 }
