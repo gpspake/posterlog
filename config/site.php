@@ -1,4 +1,8 @@
 <?php
 return [
-    'title' => 'PosterLog'
+    'title' => 'PosterLog',
+    'uploads' => [
+        'storage' => 'local',
+        'webpath' => '/uploads',
+    ]
 ];

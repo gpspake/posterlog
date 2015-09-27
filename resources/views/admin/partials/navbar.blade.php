@@ -17,7 +17,7 @@
     <ul class="left">
         @if (Auth::check())
             <li @if (Request::is('admin/poster*')) class="active" @endif>
-                <a href="/admin/post">Posters</a>
+                <a href="/admin/posters">Posters</a>
             </li>
             <li @if (Request::is('admin/tag*')) class="active" @endif>
                 <a href="/admin/tag">Tags</a>
