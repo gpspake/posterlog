@@ -63,6 +63,16 @@
         </div>
 
         <div class="row">
+            <label for="slug" class="medium-3 columns control-label">
+                Slug
+            </label>
+            <div class="medium-8 columns">
+                <input type="text" class="form-control" name="slug" autofocus
+                       id="slug" value="{{ $slug }}">
+            </div>
+        </div>
+
+        <div class="row">
 
 
             <label for="draft" class="medium-3 columns control-label">

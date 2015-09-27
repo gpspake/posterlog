@@ -107,58 +107,44 @@
     <div class="large-10 columns">
         <div class="grid">
 
-            <div class="grid-item">
-                <a href="#" data-reveal-id="myModal">
-                    <img src="uploads/alt-j.jpg"/>
-                </a>
-            </div>
-            <div id="myModal" class="reveal-modal medium" data-reveal aria-labelledby="modalTitle"
-                 aria-hidden="true" role="dialog">
 
-                <div class="row">
-                    <div class="large-8 columns">
-                        <a href="images/alt-j.jpg"><img src="uploads/alt-j.jpg"/></a>
+
+
+
+
+
+
+                @foreach ($posters as $poster)
+
+
+                    <div class="grid-item">
+                        <a href="#" data-reveal-id="{{ $poster->slug }}">
+                            <img src="{{ $poster->image }}"/>
+                        </a>
                     </div>
-                    <div class="large-4 columns">
-                        <p><strong>Alt-J Showbill</strong><br>
-                            Storefront<br>
-                            11x16</p>
+                    <div id="{{ $poster->slug }}" class="reveal-modal medium" data-reveal aria-labelledby="modalTitle"
+                         aria-hidden="true" role="dialog">
 
-                        <div class="tags">
-                            <p><strong>Tags</strong></p>
-                            <a href="#" class="button tiny">Gillian Welch</a>
-                            <a href="#" class="button tiny">Button</a>
-                            <a href="#" class="button tiny">Tiny Button</a>
-                            <a href="#" class="button tiny">Tiny Button</a>
-                            <a href="#" class="button tiny">tton</a>
-                            <a href="#" class="button tiny">Tiny Little Button</a>
-                            <a href="#" class="button tiny">Tiny Button</a>
-                            <a href="#" class="button tiny">Tiny Butt</a>
-                            <a href="#" class="button tiny">Tiny Button</a>
+                        <div class="row">
+                            <div class="large-8 columns">
+                                <a href="{{ $poster->image }}"><img src="{{ $poster->image }}"/></a>
+                            </div>
+                            <div class="large-4 columns">
+                                <p><strong>{{ $poster->title }}</strong><br>
+                                    Storefront<br>
+                                    {{ $poster->dimensions }}</p>
+
+                                <div class="tags">
+                                    <p><strong>Tags</strong></p>
+                                    <a href="#" class="button tiny">Gillian Welch</a>
+                                </div>
+                            </div>
+                            <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+
                         </div>
                     </div>
-                    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-
-                </div>
-            </div>
-
-            <div class="grid-item"><img src="uploads/cooper-young.jpg"/></div>
-            <div class="grid-item"><img src="uploads/gillian-welch.jpg"/></div>
-            <div class="grid-item"><img src="uploads/gillian-welch-fillmore.jpg"/></div>
-            <div class="grid-item"><img src="uploads/gillian-welch-fillmore-monkey.jpg"/></div>
-            <div class="grid-item"><img src="uploads/gillian-welch-hell-among-yearlings.jpg"/></div>
-            <div class="grid-item"><img src="uploads/gillian-welch-time-revelator.jpg"/></div>
-            <div class="grid-item"><img src="uploads/minglewood-bill.jpg"/></div>
-            <div class="grid-item"><img src="uploads/modest-mouse.png"/></div>
-            <div class="grid-item"><img src="uploads/alt-j.jpg"/></div>
-            <div class="grid-item"><img src="uploads/cooper-young.jpg"/></div>
-            <div class="grid-item"><img src="uploads/gillian-welch.jpg"/></div>
-            <div class="grid-item"><img src="uploads/gillian-welch-fillmore.jpg"/></div>
-            <div class="grid-item"><img src="uploads/gillian-welch-fillmore-monkey.jpg"/></div>
-            <div class="grid-item"><img src="uploads/gillian-welch-hell-among-yearlings.jpg"/></div>
-            <div class="grid-item"><img src="uploads/gillian-welch-time-revelator.jpg"/></div>
-            <div class="grid-item"><img src="uploads/minglewood-bill.jpg"/></div>
-            <div class="grid-item"><img src="uploads/modest-mouse.png"/></div>
+                @endforeach
+            {!! $posters->render() !!}
         </div>
     </div>
     <div class="large-1 columns"></div>

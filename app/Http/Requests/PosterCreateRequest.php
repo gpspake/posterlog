@@ -23,6 +23,7 @@ class PosterCreateRequest extends Request
         return [
             'title' => 'required',
             'dimensions' => 'required',
+            'slug' => 'required',
             'image' => 'required',
             'publish_date' => 'required',
             'publish_time' => 'required',
@@ -39,6 +40,7 @@ class PosterCreateRequest extends Request
         );
         return [
             'title' => $this->title,
+            'slug' => $this->slug,
             'dimensions' => $this->dimensions,
             'image' => $this->image,
             'description' => $this->description,

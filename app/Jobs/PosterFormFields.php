@@ -25,6 +25,7 @@ class PosterFormFields extends Job implements SelfHandling
         'title' => '',
         'dimensions' => '',
         'description' => '',
+        'slug' => '',
         'image' => '',
         'is_draft' => "0",
         'publish_date' => '',

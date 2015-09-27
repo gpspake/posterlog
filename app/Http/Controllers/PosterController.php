@@ -11,7 +11,7 @@ class PosterController extends Controller
     {
         $posters = Poster::where('published_at', '<=', Carbon::now())
             ->orderBy('published_at', 'desc')
-            ->paginate(10);
+            ->paginate(0);
 
         return view('index', compact('posters'));
     }
