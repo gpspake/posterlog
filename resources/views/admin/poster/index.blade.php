@@ -1,19 +1,18 @@
 @extends('admin.layout')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Posters</h3>
-                    </div>
-                    <div class="panel-body">
+    <br>
+    <div class="row">
+        <div class="columns">
+            <div class="panel">
+                <h3 class="panel-title">Posters</h3>
 
-                        TODO
-
+                <div class="row">
+                    <div class="columns">
+                        TO DO
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
