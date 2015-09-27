@@ -13,6 +13,9 @@
     "foundation": "~5.5.2",
     "masonry": "~3.3.2",
     "datatables-plugins": "~1.10.9",
-    "imagesloaded": "~3.1.8"
+    "imagesloaded": "~3.1.8",
+    "selectize": "~0.12.1",
+    "pickadate": "~3.5.6",
+    "font-awesome": "fontawesome#~4.4.0"
   }
 }

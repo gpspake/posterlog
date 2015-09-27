@@ -28,6 +28,6 @@ class CreatePostersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('posts');
+        Schema::drop('posters');
     }
 }

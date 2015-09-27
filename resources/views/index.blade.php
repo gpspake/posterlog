@@ -19,6 +19,7 @@
 
     <div class="large-5 columns">
         <br>
+
         <form>
             <div class="row collapse postfix-radius">
                 <div class="small-9 columns">
@@ -37,18 +38,20 @@
     <div class="large-1 columns">
         <ul class="side-nav" role="navigation" title="Link List">
             <li role="menuitem">
-                <a href="#" data-reveal-id="about" >About</a>
+                <a href="#" data-reveal-id="about">About</a>
 
-                <div id="about" class="reveal-modal medium" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                <div id="about" class="reveal-modal medium" data-reveal aria-labelledby="modalTitle"
+                     aria-hidden="true" role="dialog">
                     <h2 id="modalTitle">About</h2>
                     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
                 </div>
             </li>
 
             <li role="menuitem">
-                <a href="#" data-reveal-id="artistSelect" >Tags</a>
+                <a href="#" data-reveal-id="artistSelect">Tags</a>
 
-                <div id="artistSelect" class="reveal-modal medium" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                <div id="artistSelect" class="reveal-modal medium" data-reveal aria-labelledby="modalTitle"
+                     aria-hidden="true" role="dialog">
                     <h2 id="modalTitle">Filter by Artist</h2>
 
                     <form>
@@ -97,6 +100,8 @@
                 </div>
             </li>
 
+            <li><a href="/admin">Admin</a></li>
+
         </ul>
     </div>
     <div class="large-10 columns">
@@ -107,7 +112,8 @@
                     <img src="uploads/alt-j.jpg"/>
                 </a>
             </div>
-            <div id="myModal" class="reveal-modal medium" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+            <div id="myModal" class="reveal-modal medium" data-reveal aria-labelledby="modalTitle"
+                 aria-hidden="true" role="dialog">
 
                 <div class="row">
                     <div class="large-8 columns">
@@ -117,6 +123,7 @@
                         <p><strong>Alt-J Showbill</strong><br>
                             Storefront<br>
                             11x16</p>
+
                         <div class="tags">
                             <p><strong>Tags</strong></p>
                             <a href="#" class="button tiny">Gillian Welch</a>
@@ -164,9 +171,9 @@
 @yield('scripts')
 <script>
     $(document).foundation();
-    $(document).ready( function() {
+    $(document).ready(function () {
         var $grid = $('.grid');
-        $grid.imagesLoaded( function() {
+        $grid.imagesLoaded(function () {
             // init Masonry after all images have loaded
             $grid.masonry({
                 itemSelector: '.grid-item'

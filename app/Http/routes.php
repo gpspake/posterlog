@@ -26,13 +26,14 @@ $router->group([
     'namespace' => 'Admin',
     'middleware' => 'auth',
 ], function () {
-    resource('admin/poster', 'PosterController');
+    resource('admin/poster', 'PosterController', ['except' => 'show']);
     resource('admin/tag', 'TagController', ['except' => 'show']);
     get('admin/upload', 'UploadController@index');
     post('admin/upload/file', 'UploadController@uploadFile');
     delete('admin/upload/file', 'UploadController@deleteFile');
     post('admin/upload/folder', 'UploadController@createFolder');
     delete('admin/upload/folder', 'UploadController@deleteFolder');
+
 });
 
 // Logging in and out

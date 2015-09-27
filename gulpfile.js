@@ -21,6 +21,13 @@ gulp.task("copyfiles", function () {
     gulp.src("vendor/bower_components/foundation/js/vendor/modernizr.js")
         .pipe(gulp.dest("resources/assets/js/"));
 
+    //copy fontawesome
+    gulp.src("vendor/bower_components/font-awesome/scss/**")
+        .pipe(gulp.dest("resources/assets/sass/fontawesome"));
+
+    gulp.src("vendor/bower_components/font-awesome/fonts/**")
+        .pipe(gulp.dest("public/assets/fonts"));
+
     // Copy datatables
     var dtDir = 'vendor/bower_components/datatables-plugins/integration/';
 
@@ -41,6 +48,26 @@ gulp.task("copyfiles", function () {
     // Copy imagesloaded
     gulp.src("vendor/bower_components/imagesloaded/imagesloaded.pkgd.js")
         .pipe(gulp.dest('resources/assets/js/'));
+
+    // Copy selectize
+    gulp.src("vendor/bower_components/selectize/dist/css/**")
+        .pipe(gulp.dest("public/assets/selectize/css"));
+
+    gulp.src("vendor/bower_components/selectize/dist/js/standalone/selectize.min.js")
+        .pipe(gulp.dest("public/assets/selectize/"));
+
+    // Copy pickadate
+    gulp.src("vendor/bower_components/pickadate/lib/compressed/themes/**")
+        .pipe(gulp.dest("public/assets/pickadate/themes/"));
+
+    gulp.src("vendor/bower_components/pickadate/lib/compressed/picker.js")
+        .pipe(gulp.dest("public/assets/pickadate/"));
+
+    gulp.src("vendor/bower_components/pickadate/lib/compressed/picker.date.js")
+        .pipe(gulp.dest("public/assets/pickadate/"));
+
+    gulp.src("vendor/bower_components/pickadate/lib/compressed/picker.time.js")
+        .pipe(gulp.dest("public/assets/pickadate/"));
 });
 
 /*
