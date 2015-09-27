@@ -29,6 +29,7 @@
 @yield('content')
 
 <script src="/assets/js/admin.js"></script>
+<script>$(document).foundation();</script>
 
 @yield('scripts')
 

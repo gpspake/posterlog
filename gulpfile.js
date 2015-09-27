@@ -18,6 +18,9 @@ gulp.task("copyfiles", function () {
     gulp.src("vendor/bower_components/foundation/js/foundation.js")
         .pipe(gulp.dest("resources/assets/js/"));
 
+    gulp.src("vendor/bower_components/foundation/js/vendor/modernizr.js")
+        .pipe(gulp.dest("resources/assets/js/"));
+
     // Copy datatables
     var dtDir = 'vendor/bower_components/datatables-plugins/integration/';
 
@@ -54,6 +57,7 @@ gulp.task("copyfiles", function () {
 elixir(function (mix) {
     // Combine scripts
     mix.scripts([
+            'js/modernizr.js',
             'js/jquery.js',
             'js/foundation.js',
             'js/jquery.dataTables.js',
