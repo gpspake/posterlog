@@ -40,3 +40,14 @@ $router->group([
 get('/auth/login', 'Auth\AuthController@getLogin');
 post('/auth/login', 'Auth\AuthController@postLogin');
 get('/auth/logout', 'Auth\AuthController@getLogout');
+
+$server = League\Glide\ServerFactory::create([
+    'source' => 'public/uploads',
+    'cache' => 'storage/framework/cache',
+]);
+
+get('images/{path}', function(League\Glide\Server $server, $path){
+//dd($server);
+
+    $server->outputImage($path,$_GET);
+});
