@@ -29,6 +29,20 @@ body { font-family: sans-serif; }
   width: 20%;
 }
 
+@media #{$medium-only} {
+  .grid-sizer,
+  .grid-item {
+    width: 25%;
+  }
+}
+
+@media #{$small-only} {
+  .grid-sizer,
+  .grid-item {
+    width: 33.33%;
+  }
+}
+
 .grid-item {
 }
 
@@ -55,3 +69,17 @@ img{width:100%;}
 .full-width-table {
   width: 100%;
 }
+
+.grid-item img {
+  opacity:0;
+}
+
+.grid-item img.masonry-grid-image {
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -webkit-transition: opacity .5s ease-in-out;
+}
+
+
+

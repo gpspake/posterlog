@@ -12,16 +12,16 @@
             </a>
         </div>
     </div>
-
     <div class="row">
         <div class="columns">
 
             @include('admin.partials.errors')
             @include('admin.partials.success')
 
-            <table id="posts-table" class="table table-striped table-bordered">
+            <table id="posters-table" class="full-width-table">
                 <thead>
                 <tr>
+                    <th width="100">Preview</th>
                     <th>Published</th>
                     <th>Title</th>
                     <th data-sortable="false">Actions</th>
@@ -30,6 +30,9 @@
                 <tbody>
                 @foreach ($posters as $poster)
                     <tr>
+                        <td data-order="{{ $poster->published_at->timestamp }}">
+                            <img src="{{ url($poster->image) }}?w=200&h=200&fit=crop" />
+                        </td>
                         <td data-order="{{ $poster->published_at->timestamp }}">
                             {{ $poster->published_at->format('j-M-y g:ia') }}
                         </td>
@@ -50,4 +53,12 @@
             </table>
         </div>
     </div>
+@stop
+
+@section('scripts')
+    <script>
+        $(function () {
+            $("#posters-table").DataTable({});
+        });
+    </script>
 @stop

@@ -8253,6 +8253,16 @@ body {
 .grid-item {
   width: 20%; }
 
+@media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+  .grid-sizer,
+  .grid-item {
+    width: 25%; } }
+
+@media only screen and (max-width: 40em) {
+  .grid-sizer,
+  .grid-item {
+    width: 33.33%; } }
+
 .grid-item--width2 {
   width: 40%; }
 
@@ -8283,5 +8293,14 @@ img {
 
 .full-width-table {
   width: 100%; }
+
+.grid-item img {
+  opacity: 0; }
+
+.grid-item img.masonry-grid-image {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out; }
 
 /*# sourceMappingURL=admin.css.map */

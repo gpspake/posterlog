@@ -104,46 +104,36 @@
 
         </ul>
     </div>
-    <div class="large-10 columns">
+    <div class="small-10 small-offset-1 large-offset-0 columns">
         <div class="grid">
+            @foreach ($posters as $poster)
+                <div class="grid-item">
+                    <a href="#" data-reveal-id="{{ $poster->slug }}">
+                        <img src="{{ $poster->image }}?w=300">
+                    </a>
+                </div>
+                <div id="{{ $poster->slug }}" class="reveal-modal medium" data-reveal aria-labelledby="modalTitle"
+                     aria-hidden="true" role="dialog">
 
-
-
-
-
-
-
-
-                @foreach ($posters as $poster)
-
-
-                    <div class="grid-item">
-                        <a href="#" data-reveal-id="{{ $poster->slug }}">
-                            <img src="{{ $poster->image }}"/>
-                        </a>
-                    </div>
-                    <div id="{{ $poster->slug }}" class="reveal-modal medium" data-reveal aria-labelledby="modalTitle"
-                         aria-hidden="true" role="dialog">
-
-                        <div class="row">
-                            <div class="large-8 columns">
-                                <a href="{{ $poster->image }}"><img src="{{ $poster->image }}"/></a>
-                            </div>
-                            <div class="large-4 columns">
-                                <p><strong>{{ $poster->title }}</strong><br>
-                                    Storefront<br>
-                                    {{ $poster->dimensions }}</p>
-
-                                <div class="tags">
-                                    <p><strong>Tags</strong></p>
-                                    <a href="#" class="button tiny">Gillian Welch</a>
-                                </div>
-                            </div>
-                            <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-
+                    <div class="row">
+                        <div class="large-8 columns">
+                            <a href="{{ $poster->image }}"><img src="{{ $poster->image }}?w=500"/></a>
                         </div>
+                        <div class="large-4 columns">
+                            <p><strong>{{ $poster->title }}</strong><br>
+                                Storefront<br>
+                                {{ $poster->dimensions }}</p>
+
+                            <div class="tags">
+                                <p><strong>Tags</strong></p>
+                                <a href="#" class="button tiny">Gillian Welch</a>
+                            </div>
+                        </div>
+                        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+
                     </div>
-                @endforeach
+                </div>
+            @endforeach
             {!! $posters->render() !!}
         </div>
     </div>
@@ -164,6 +154,8 @@
             $grid.masonry({
                 itemSelector: '.grid-item'
             });
+
+            $(".grid-item img").addClass( "masonry-grid-image" );
         });
     });
 </script>
