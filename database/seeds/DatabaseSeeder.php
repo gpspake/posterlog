@@ -11,11 +11,22 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-
+        $this->call('UserTableSeeder');
         $this->call('PosterTableSeeder');
     }
 
 }
+
+class UserTableSeeder extends Seeder
+{
+    public function run()
+    {
+        App\User::truncate();
+
+        factory(App\User::class, 1)->create();
+    }
+}
+
 
 class PosterTableSeeder extends Seeder
 {

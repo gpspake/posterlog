@@ -11,11 +11,11 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\User::class, function ($faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->email,
-        'password' => bcrypt(str_random(10)),
+        'name' => 'George Spake',
+        'email' => 'gpspake@gmail.com',
+        'password' => bcrypt('secret'),
         'remember_token' => str_random(10),
     ];
 });
@@ -24,8 +24,10 @@ $factory->define(App\Poster::class, function ($faker) {
     return [
         'title' => $faker->sentence(mt_rand(3, 10)),
         'image' => 'image.jpg',
-        'description' => $faker->sentence(mt_rand(10, 20)),
-        'dimensions' => mt_rand(18, 24) . 'x' . mt_rand(18, 24),
+        'notes' => $faker->sentence(mt_rand(10, 20)),
+        'dimension_height' => mt_rand(18, 24),
+        'dimension_width' => mt_rand(18, 24),
         'published_at' => $faker->dateTimeBetween('-1 month', '+3 days'),
+        'is_draft' => false,
     ];
 });
