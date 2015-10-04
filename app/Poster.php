@@ -9,7 +9,7 @@ class Poster extends Model
     protected $dates = ['published_at'];
 
     protected $fillable = [
-        'title', 'subtitle', 'description', 'image', 'dimensions', 'slug', 'is_draft', 'published_at',
+        'title', 'subtitle', 'notes', 'image', 'dimension_height', 'dimension_width', 'slug', 'is_draft', 'published_at',
     ];
 
     /**

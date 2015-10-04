@@ -23,8 +23,9 @@ class PosterFormFields extends Job implements SelfHandling
      */
     protected $fieldList = [
         'title' => '',
-        'dimensions' => '',
-        'description' => '',
+        'dimension_width' => '',
+        'dimension_height' => '',
+        'notes' => '',
         'slug' => '',
         'image' => '',
         'is_draft' => "0",
