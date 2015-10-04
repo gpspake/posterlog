@@ -11,12 +11,12 @@
         </div>
 
         <div class="row">
-            <label for="description" class="medium-2 columns control-label">
-                Description
+            <label for="notes" class="medium-2 columns control-label">
+                Notes
             </label>
             <div class="medium-10 columns">
-        <textarea class="form-control" name="description" rows="14"
-                  id="description">{{ $description }}</textarea>
+        <textarea class="form-control" name="notes" rows="14"
+                  id="description">{{ $notes }}</textarea>
             </div>
         </div>
 
@@ -53,13 +53,35 @@
             </div>
         </div>
         <div class="row">
-            <label for="dimensions" class="medium-3 columns control-label">
+            <label for="dimension_height" class="medium-4 columns control-label">
                 Dimensions
             </label>
-            <div class="medium-8 columns">
-                <input type="text" class="form-control" name="dimensions" autofocus
-                       id="dimensions" value="{{ $dimensions }}">
+
+
+            <div class="medium-4 columns">
+                <div class="row collapse prefix-radius">
+                    <div class="small-4 columns">
+                        <span class="prefix">H</span>
+                    </div>
+                    <div class="small-8 columns">
+                        <input type="text" class="form-control" name="dimension_height" autofocus
+                               id="dimension_height" value="{{ $dimension_height }}">
+                    </div>
+                </div>
             </div>
+
+            <div class="medium-4 columns">
+                <div class="row collapse prefix-radius">
+                    <div class="small-4 columns">
+                        <span class="prefix">W</span>
+                    </div>
+                    <div class="small-8 columns">
+                        <input type="text" class="form-control" name="dimension_width" autofocus
+                               id="dimension_width" value="{{ $dimension_width }}">
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="row">

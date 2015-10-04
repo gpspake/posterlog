@@ -12,9 +12,9 @@
 </head>
 <body>
 
-<div class="row">
-    <div class="large-5 large-offset-1 columns">
-        <h1><strong>Poster</strong>Log</h1>
+<div class="row collapse">
+    <div class="large-5 large-offset-1 columns site-title">
+        <h1 class="grow"><strong>Poster</strong>Log</h1>
     </div>
 
     <div class="large-5 columns">
@@ -36,6 +36,7 @@
 
 <div class="row collapse ">
     <div class="large-1 columns">
+        <div class="sticky">
         <ul class="side-nav" role="navigation" title="Link List">
             <li role="menuitem">
                 <a href="#" data-reveal-id="about">About</a>
@@ -103,6 +104,7 @@
             <li><a href="/admin">Admin</a></li>
 
         </ul>
+        </div>
     </div>
     <div class="small-10 small-offset-1 large-offset-0 columns">
         <div class="grid">
@@ -116,10 +118,10 @@
                      aria-hidden="true" role="dialog">
 
                     <div class="row">
-                        <div class="large-8 columns">
+                        <div class="large-7 columns">
                             <a href="{{ $poster->image }}"><img src="{{ $poster->image }}?w=500"/></a>
                         </div>
-                        <div class="large-4 columns">
+                        <div class="large-5 columns">
                             <p><strong>{{ $poster->title }}</strong><br>
                                 Storefront<br>
                                 {{ $poster->dimensions }}</p>
@@ -134,10 +136,10 @@
                     </div>
                 </div>
             @endforeach
-            {!! $posters->render() !!}
         </div>
     </div>
     <div class="large-1 columns"></div>
+
 </div>
 
 @yield('content')
@@ -154,7 +156,6 @@
             $grid.masonry({
                 itemSelector: '.grid-item'
             });
-
             $(".grid-item img").addClass( "masonry-grid-image" );
         });
     });
