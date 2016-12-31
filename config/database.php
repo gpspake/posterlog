@@ -47,7 +47,7 @@ return [
     'connections' => [
 
         'sqlite' => [
-            'driver'   => 'pgsql',
+            'driver'   => 'sqlite',
             'database' => database_path('database.sqlite'),
             'prefix'   => '',
         ],
