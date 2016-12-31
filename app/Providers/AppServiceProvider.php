@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use League\Glide\ServerFactory;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton('League\Glide\Server', function($app) {
             $filesystem = $app->make('Illuminate\Contracts\Filesystem\Filesystem');
 
-            return \League\Glide\ServerFactory::create([
+            return ServerFactory::create([
                 'source' => $filesystem->getDriver() ,
                 'cache' => $filesystem->getDriver(),
                 'source_path_prefix' => '/',
