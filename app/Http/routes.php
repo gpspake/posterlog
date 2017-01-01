@@ -18,6 +18,8 @@ get('/', function () {
 get('poster', 'PosterController@index');
 get('poster/{slug}', 'PosterController@showPoster');
 
+get('json', 'JsonController@index');
+
 // Admin area
 get('admin', function () {
     return redirect('/admin/poster');
